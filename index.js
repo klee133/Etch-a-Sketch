@@ -13,4 +13,15 @@ function createGrid(num) {
     }
 }
 
+function hover(e) {
+    e.target.style.backgroundColor = "purple";
+}
+
 createGrid(16);
+
+const squares = Array.from(document.getElementsByClassName("square"));
+squares.forEach((square) => {
+    square.addEventListener("mouseover", hover);
+});
+const test = document.querySelector("#test");
+test.addEventListener("mouseover", hover);
