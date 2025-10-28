@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    height: 98vh;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 4px dashed red;
+    width: 90vmin;
+    height: 90vmin;  
+}
+
+.row {
+    display: flex;
+    flex: 1;
+    border: 3px solid pink;
+}
+
+.square {
+    border: 2px solid blue;
+    flex: 1;
+}
+
