@@ -13,13 +13,27 @@ function createGrid(num) {
     }
 }
 
+function newNumGrid() {
+    let num = prompt("How many squares per side for this new grid? (Cannot be more than 100.)");
+    while(num > 100) {
+        let num = prompt("Number is more than 100. Please enter a number less than or equal to 100.");
+    }
+    let rows = Array.from(document.getElementsByClassName("row"));
+    rows.forEach((row) => row.remove());
+    createGrid(num);
+    addHover();
+}
+
 function hover(e) {
     e.target.style.backgroundColor = "darkgray";
 }
 
-createGrid(16);
+function addHover() {
+    const squares = Array.from(document.getElementsByClassName("square"));
+    squares.forEach((square) => {
+        square.addEventListener("mouseover", hover);
+    });
+}
 
-const squares = Array.from(document.getElementsByClassName("square"));
-squares.forEach((square) => {
-    square.addEventListener("mouseover", hover);
-});
+createGrid(16);
+addHover();
