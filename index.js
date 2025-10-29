@@ -3,6 +3,7 @@ const randColBtn = document.querySelector(".randColors");
 const opacityBtn = document.querySelector(".opacity");
 let randColSelection = 1;
 let opacitySelection = 1;
+let currentGridNum = 16;
 
 function createGrid(num) {
     for(let i = 0; i < num; i++) {
@@ -22,9 +23,20 @@ function newNumGrid() {
     while(num > 100) {
         let num = prompt("Number is more than 100. Please enter a number less than or equal to 100.");
     }
+    currentGridNum = num;
+    deleteGrid();
+    createGrid(num);
+    addHover();
+}
+
+function deleteGrid() {
     let rows = Array.from(document.getElementsByClassName("row"));
     rows.forEach((row) => row.remove());
-    createGrid(num);
+}
+
+function clearGrid() {
+    deleteGrid();
+    createGrid(currentGridNum);
     addHover();
 }
 
@@ -89,5 +101,5 @@ function opacityOption() {
     }
 }
 
-createGrid(16);
+createGrid(currentGridNum);
 addHover();
