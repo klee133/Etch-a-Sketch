@@ -26,7 +26,7 @@ function newNumGrid() {
 
 function hover(e) {
     if(e.target.dataset.color === undefined) {
-        let color = "black";
+        let color = getRandomColor();
         e.target.dataset.color = color;
         e.target.style.backgroundColor = color;
         e.target.dataset.opacity = 0.1;
@@ -34,7 +34,6 @@ function hover(e) {
     }else{
         let num = Number(e.target.dataset.opacity) + 0.1;
         e.target.dataset.opacity = num;
-        console.log(e.target.dataset.opacity);
         e.target.style.opacity = num;
     }
 }
@@ -44,6 +43,15 @@ function addHover() {
     squares.forEach((square) => {
         square.addEventListener("mouseenter", hover);
     });
+}
+
+function getRandomColor() {
+    let random = Math.floor(Math.random() * ((256*256*256) - 1));
+    let randomHex = random.toString(16);
+    if(randomHex.length < 6) {
+        randomHex = "0" + randomHex;
+    }
+    return "#" + randomHex;
 }
 
 createGrid(16);
