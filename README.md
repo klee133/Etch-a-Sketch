@@ -7,7 +7,7 @@ This is a simple webpage version of Etch-a-Sketch that has 4 button options:
 - Toggle on/off increasing opacity
 - Clear the grid
 
-Future ideas to implement:
+Ideas to implement in the future:
 - Draw on mouse down to let user have more control over drawing
 - Option to choose color
 - Grid size input or range slider
