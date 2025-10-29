@@ -25,7 +25,18 @@ function newNumGrid() {
 }
 
 function hover(e) {
-    e.target.style.backgroundColor = "darkgray";
+    if(e.target.dataset.color === undefined) {
+        let color = "black";
+        e.target.dataset.color = color;
+        e.target.style.backgroundColor = color;
+        e.target.dataset.opacity = 0.1;
+        e.target.style.opacity = "0.1";
+    }else{
+        let num = Number(e.target.dataset.opacity) + 0.1;
+        e.target.dataset.opacity = num;
+        console.log(e.target.dataset.opacity);
+        e.target.style.opacity = num;
+    }
 }
 
 function addHover() {
