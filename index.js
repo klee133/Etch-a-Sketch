@@ -31,7 +31,7 @@ function hover(e) {
 function addHover() {
     const squares = Array.from(document.getElementsByClassName("square"));
     squares.forEach((square) => {
-        square.addEventListener("mouseover", hover);
+        square.addEventListener("mouseenter", hover);
     });
 }
 
